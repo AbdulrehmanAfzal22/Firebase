@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.back {
+    background: #7161fc;
+    color: white;
+    width: 78px;
+     height: 29px;
+    position: absolute;
+    right: 857px;
+    top: 33px;
+}
+
+.container {
+  display: flex;
+  height: 80vh;
+  width: 120vh;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+
+.user {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  background-color: #7161fc;
+  border-right: 2px solid #333;
+}
+
+.heading {
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #333;
+}
+
+.user-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.user1 {
+  background-color: beige;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.user1:hover {
+  background-color: #ddd;
+}
+
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  background-color: #f4f6ff;
+}
+
+.header {
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  border-bottom: 2px solid #ccc;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.input-area {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 2px solid #ccc;
+  background: #fff;
+}
+
+.input {
+  flex: 1;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding: 0 15px;
+  outline: none;
+}
+
+.btn1 {
+  margin-left: 10px;
+  background-color: #0081c9;
+  color: white;
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn1:hover {
+  background-color: #7161fc;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Legend Workouts</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="navbar-container">
+      <h2 class="heading">Legend Workouts</h2>
+      <ul class="nav-bar">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="feature.html">Features</a></li>
+        <li><a href="contact.html">Queries</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+      <p id="nameError" class="error"></p>
+
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="Enter your email">
+      <p id="emailError" class="error"></p>
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" placeholder="Enter subject">
+      <p id="subjectError" class="error"></p>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" placeholder="Enter your message"></textarea>
+      <p id="messageError" class="error"></p>
+
+      <button type="submit" id="submit">Send Message</button>
+    </form>
+  </div>
+
+
+  <div class="contact-info">
+    <h2>Our Location</h2>
+    <p>🏋️‍♂️ Legend Workouts Gym<br> Johar town g4 745, Lahore, Pakistan</p>
+    <p>📞 +92 300 1234567</p>
+    <p>📧 support@legendworkouts.com</p>
+  </div>
+
+  <script src="contact.js"></script>
+</body>
+</html>

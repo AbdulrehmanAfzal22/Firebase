@@ -1,0 +1,156 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  background-image: url("contact-bg.png"); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+  background-image: url("ChatGPT\ Image\ Sep\ 3\,\ 2025\,\ 06_21_09\ PM\ \(1\).png");
+}
+
+
+header {
+  background: #6151f7;
+  padding: 15px 20px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+.heading {
+  font-family: cursive;
+  font-size: 20px;
+  color: white;
+  margin: 0;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-bar li {
+  margin: 0;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: lighter;
+  transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+  color: #ddd;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.contact-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #6151f7;
+}
+
+.contact-container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.contact-container input{
+  
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+
+}
+.contact-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.contact-container button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background: #6151f7;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-container button:hover {
+  background: #4a3fd1;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin: 2px 0;
+}
+
+
+.contact-info {
+    text-align: center;
+    margin: 182px 20px;
+    color: #ffffff;
+}
+
+.contact-info h2 {
+  color: #6151f7;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-bar {
+    margin-top: 10px;
+    gap: 15px;
+  }
+
+  .contact-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}

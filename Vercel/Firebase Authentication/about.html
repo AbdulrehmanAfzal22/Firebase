@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing page</title>
+  <link rel="stylesheet" href="about.css">
+</head>
+<style>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+body,
+html {
+  height: 100%;
+
+}
+
+.about-section {
+  background: url("ChatGPT Image Sep 3, 2025, 06_21_09 PM (1).png") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
+}
+
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+.content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+
+.btn:hover {
+  background: #6151f7;
+  color: white;
+}
+
+
+
+
+.over {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 30px;
+  background-color: #6151f7;
+  height: 52px;
+  width: 100%;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 95px;
+  padding: 0;
+  margin: 548px;
+}
+
+.nav-bar li {
+  list-style: none;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+  color: gray;
+}
+
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.heading {
+  font-family: cursive;
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  position: absolute;
+  right: 1715px;
+  top: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.slider {
+  position: absolute;
+  width: 500px;
+  right: 0px;
+  top: 0px;
+  height: 300px;
+
+  border-radius: 100px;
+}
+
+
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  right: 94px;
+  top: 443px;
+  border-radius: 100px;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+
+
+
+
+.heading {
+  position: absolute;
+  right: 10%;
+  top: 35%;
+}
+
+
+.p span {
+  color: #0ac0ee;
+}
+
+
+
+
+
+
+
+.slider1 {
+  position: absolute;
+  width: 500px;
+  left: 0px;
+  top: 443px;
+  height: 300px;
+  border-radius: 100px;
+}
+
+.slide1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  left: 81px;
+  top: 5px;
+  border-radius: 100px;
+}
+
+
+.slide1.active {
+  opacity: 1;
+}
+
+.heading1 {
+    font-family: cursive;
+    font-size: 20px;
+    color: white;
+    margin: 0;
+    position: absolute;
+    left: 11%;
+    top: 34%;
+} 
+
+@media (max-width: 1024px) {
+  .nav-bar {
+    gap: 40px;
+    margin: 0; 
+  }
+
+  .heading {
+    position: static;
+    margin-left: 15px;
+  }
+
+  .slider, .slider1 {
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  .slide, .slide1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .heading, .heading1 {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+
+
+</style>
+<body>
+  <header>
+    <nav>
+      <div class="over">
+        <div class="links"> 
+          <ul class="nav-bar">
+            <a href="home.html"><li>Home</li></a>
+            <a href="about.html"><li>About us</li></a>
+            <a href="feature.html"><li>Features</li></a>
+            <a href="contact.html"><li>Queries</li></a>
+          </ul>
+        </div>
+        <h2 class="heading">Legend Workouts</h2>
+        
+      </div>
+    </nav>
+  </header>
+
+<section class="about-section">
+<div class="overlay"></div>
+<div class="content">
+<h1>About Legends</h1>
+<p class="p">
+At <span> Legends</span> Gym, we believe fitness is more than just exercise – it's a lifestyle.
+Our mission is to empower individuals to reach their peak physical and mental strength
+in a supportive and motivating environment. With state-of-the-art equipment,
+expert trainers, and a vibrant community, <span>Legends</span> is where transformation begins.
+</p>
+<a href="#" class="btn">Join Us Today</a>
+</div>
+
+</section>
+<h1 class="heading">With our professional Trainers</h1>
+<div class="slider">
+  <img src="trainer1.jpg" class="slide active">
+  <img src="trainer2.jpg" class="slide">
+  <img src="trainer3.jpg" class="slide">
+  <img src="trainer4.jpg" class="slide">
+</div>
+
+
+
+<h1 class="heading1">With best equipments</h1>
+<div class="slider1">
+  <img src="e1.jpg" class="slide1 active">
+  <img src="e2.jpg" class="slide1">
+  <img src="e3.jpg" class="slide1">
+  <img src="e4.jpg" class="slide1">
+</div>
+<script src="about.js"></script>
+</body>
+</html>

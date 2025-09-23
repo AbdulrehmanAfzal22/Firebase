@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Password</title>
+  <link rel="stylesheet" href="forget.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading">Reset your password</h1>
+
+    <div class="form-group">
+      <label for="email" class="label">Email</label>
+      <input type="text" id="email" placeholder="Enter your Email" class="input">
+      <p id="emailError" style="color:red"></p>
+    </div>
+
+    <div class="btnn">
+      <button id="resetBtn" class="btn btnn">Reset password</button>
+      <button class="btn" onclick="window.location.href='index.html'">Back</button>
+    </div>
+  </div>
+
+  <script type="module" src="forget.js"></script>
+</body>
+</html>
