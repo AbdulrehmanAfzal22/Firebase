@@ -6,7 +6,7 @@ import {
   signInWithEmailAndPassword, 
   setPersistence, 
   browserLocalPersistence, 
-  onAuthStateChanged 
+   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 import { 
   getDatabase, 
@@ -35,8 +35,7 @@ function showError(id, message) {
   const el = document.getElementById(id);
   if (el) el.textContent = message;
 }
-
-
+ 
 const signupBtn = document.getElementById("createBtn");
 if (signupBtn) {
   signupBtn.addEventListener("click", async (e) => {
@@ -54,12 +53,12 @@ if (signupBtn) {
     const firstName = document.getElementById("name")?.value;
 
 
-    if (!firstName) {
-      showError("nameError", "Name is required");
+     if (!firstName) {
+      showError("nameError", "Name is rNamequired");
       return;
     }
     if (!email.endsWith("@gmail.com")) {
-      showError("usernameError", "Email must be a Gmail address");
+      showError("usernameError", "Please Enter valid an email");
       return;
     }
     if (password.length < 6) {
@@ -82,7 +81,7 @@ if (signupBtn) {
 
       window.location.href = "home.html";
     } catch (error) {
-      showError("usernameError", error.message);
+      showError("usernameError", "Something went wrong, please try again.");
     }
   });
 }
@@ -104,7 +103,7 @@ if (loginBtn) {
       await signInWithEmailAndPassword(auth, email, password);
       window.location.href = "home.html";
     } catch (error) {
-      showError("loginError", error.message);
+      showError("loginError", "Something went wrong, please try again.");
     }
   });
 }

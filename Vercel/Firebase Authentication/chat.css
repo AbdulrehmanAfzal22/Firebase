@@ -16,13 +16,13 @@ body {
 .back {
     background: #7161fc;
     color: white;
-    width: 78px;
-     height: 29px;
+    width: 98px;
+    height: 29px;
     position: absolute;
-    right: 857px;
+    right: 47%;
     top: 33px;
+    border-radius:33px ;
 }
-
 .container {
   display: flex;
   height: 80vh;

@@ -23,12 +23,16 @@ const chatBox = document.getElementById("chat-box");
 const input = document.getElementById("message");
 const submitBtn = document.getElementById("submit");
 
-const adminEmail = "test@gmail.com"; 
+const adminEmail = "test@gmail.com";
 const adminLink = document.getElementById("adminLink");
 
+
 button.addEventListener("click", function () {
-  container.style.display =
-    container.style.display === "none" || container.style.display === "" ? "block" : "none";
+  if (container.style.display === "none" || container.style.display === "") {
+    container.style.display = "block";
+  } else {
+    container.style.display = "none";
+  }
 });
 
 onAuthStateChanged(auth, (user) => {
@@ -43,8 +47,8 @@ onAuthStateChanged(auth, (user) => {
     adminLink.style.display = "none";
   }
 
-
   const messagesRef = ref(db, "chats/" + user.uid + "/messages/");
+  const userMetaRef = ref(db, "chats/" + user.uid + "/meta");
 
   async function sendMessage() {
     const msg = input.value.trim();
@@ -58,11 +62,9 @@ onAuthStateChanged(auth, (user) => {
       senderName = snap.val().firstName || "Anonymous";
     }
 
-
     const chatUserRef = ref(db, "chats/" + user.uid);
     set(chatUserRef, { name: senderName });
 
-  
     push(messagesRef, {
       text: msg,
       senderId: user.uid,
@@ -73,34 +75,64 @@ onAuthStateChanged(auth, (user) => {
     input.value = "";
   }
 
-
-  onChildAdded(messagesRef, (snapshot) => {
-    const data = snapshot.val();
-    const isMe = data.senderId === user.uid;
-
-    const message = document.createElement("p");
-    message.innerHTML = `<strong>${data.senderName}:</strong> ${data.text}`;
-    message.style.background = isMe ? "#0081C9" : "#E5E5E5";
-    message.style.color = isMe ? "white" : "black";
-    message.style.padding = "8px 12px";
-    message.style.borderRadius = "15px";
-    message.style.margin = "5px 0";
-    message.style.display = "inline-block";
-
-    const messagediv = document.createElement("div");
-    messagediv.style.textAlign = isMe ? "right" : "left";
-    messagediv.appendChild(message);
-
-    chatBox.appendChild(messagediv);
-    chatBox.scrollTop = chatBox.scrollHeight;
-  });
-
   submitBtn.addEventListener("click", sendMessage);
   input.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-      sendMessage();
-    }
+    if (e.key === "Enter") sendMessage();
   });
+let chatStartedNotified = false;
+let notifiedMessages = new Set(); // keep track of notified message IDs
+
+onChildAdded(messagesRef, (snapshot) => {
+  const data = snapshot.val();
+  const isMe = data.senderId === user.uid;
+
+  // --- UI rendering ---
+  const message = document.createElement("p");
+  message.innerHTML = `<strong>${data.senderName}:</strong> ${data.text}`;
+  message.style.background = isMe ? "#0081C9" : "#E5E5E5";
+  message.style.color = isMe ? "white" : "black";
+  message.style.padding = "8px 12px";
+  message.style.borderRadius = "15px";
+  message.style.margin = "5px 0";
+  message.style.display = "inline-block";
+
+  const messagediv = document.createElement("div");
+  messagediv.style.textAlign = isMe ? "right" : "left";
+  messagediv.appendChild(message);
+
+  chatBox.appendChild(messagediv);
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  
+  if (user.email !== adminEmail) {
+ 
+    if (!chatStartedNotified && !isMe) {
+      chatStartedNotified = true;
+      showNotification("Your chat has started with support");
+      notifiedMessages.add(snapshot.key);
+      return;
+    }
+
+ 
+   
+  }
+});
+  function showNotification(msg) {
+    let box = document.getElementById("notificationBox");
+    let message = document.getElementById("notificationMessage");
+
+    message.textContent = msg;
+    box.classList.add("show");
+
+ 
+    setTimeout(() => {
+      closeNotification();
+    }, 5000);
+  }
+
+  window.closeNotification = function () {
+    document.getElementById("notificationBox").classList.remove("show");
+  };
 
   const logoutBtn = document.getElementById("logout");
   if (logoutBtn) {

@@ -37,7 +37,7 @@ function loadUsers() {
 
     const btn = document.createElement("button");
     btn.classList.add("user1");
-    btn.textContent = userData.name || "Unknown User";
+    btn.textContent = userData.name || "Anonymous";
     btn.onclick = () => loadMessages(userId, userData.name);
 
     usersDiv.appendChild(btn);
@@ -48,9 +48,15 @@ function loadUsers() {
 function loadMessages(userId, name) {
   currentChatUser = userId;
   chatDiv.innerHTML = `<div class="header"><h2>Chat with ${name}</h2></div>
+
+
     <div id="chat-box" style="height:60vh; overflow-y:auto; background:white; padding:10px;"></div>
-    <input type="text" class="input" placeholder="Type your message">
-    <button class="btn1" id="submit">➤</button>`;
+
+
+    <input type="text" class="input" placeholder="Type your message" style="width:90%;">
+
+
+    <button class="btn1" id="submit" >➤</button>`;
 
   const chatBox = document.getElementById("chat-box");
 

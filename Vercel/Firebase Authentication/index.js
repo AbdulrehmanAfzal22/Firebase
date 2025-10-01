@@ -17,7 +17,7 @@ const firebaseConfig = {
   measurementId: "G-XE79HKZLLT"
 };
 
-
+ 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
@@ -48,18 +48,16 @@ submit.addEventListener("click", async (event) => {
   const password = passwordInput.value.trim();
 
 
-  if (!email) {
+  if (!email.endsWith("@gmail.com")){
     showError(emailError, "Please enter an email");
     return;
   }
-  if (!password) {
-    showError(passwordError, "Please enter a password");
-    return;
-  }
+
   if (password === email) {
     showError(passwordError, "Password must be different from email");
     return;
   }
+
   if (password.length < 6) {
     showError(passwordError, "Password must be at least 6 characters");
     return;
@@ -68,7 +66,7 @@ submit.addEventListener("click", async (event) => {
   try {
     await setPersistence(auth, browserLocalPersistence);
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log("✅ Logged in:", userCredential.user.email);
+   
 
   
     window.location.href = "home.html"; 
